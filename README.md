@@ -27,6 +27,12 @@ sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io
 
 
+## Add Docker to sudo group.
+
+
+sudo usermod -aG docker $USER
+
+
 ## Update iptables for docker networking to Legacy.
 
 
