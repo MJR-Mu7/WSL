@@ -14,6 +14,27 @@
 	sudo apt-get update && sudo apt-get install -yqq daemonize dbus-user-session fontconfig
 
 	echo 'sudo daemonize /usr/bin/unshare --fork --pid --mount-proc /lib/systemd/systemd --system-unit=basic.target  exec sudo nsenter -t $(pidof systemd) -a su - $LOGNAME' >> ~/.bashrc
+	
+	
+## Systemd second way to do it
+
+	cd /tmp
+
+	wget --content-disposition   "https://gist.githubusercontent.com/djfdyuruiry/6720faa3f9fc59bfdf6284ee1f41f950/raw/952347f805045ba0e6ef7868b18f4a9a8dd2e47a/install-sg.sh"
+	
+	chmod +x /tmp/install-sg.sh
+
+	/tmp/install-sg.sh && rm /tmp/install-sg.sh
+## In cmd
+	
+
+	wsl --shutdown
+	wsl genie -s
+	ctrl +c // incase it takes too long
+	wsl genie -s 
+
+#System in now booted with systemd#
+
 
 #System will now boot with systemd everytime#
 
