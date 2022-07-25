@@ -13,10 +13,12 @@
 
 	sudo apt-get update && sudo apt-get install -yqq daemonize dbus-user-session fontconfig
 
-	echo 'sudo daemonize /usr/bin/unshare --fork --pid --mount-proc /lib/systemd/systemd --system-unit=basic.target  exec sudo nsenter -t $(pidof systemd) -a su - $LOGNAME' >> ~/.bashrc
+	sudo daemonize /usr/bin/unshare --fork --pid --mount-proc /lib/systemd/systemd --system-unit=basic.target  exec sudo nsenter -t $(pidof systemd) -a su - $LOGNAME
+	source ~/.bashrc
 	
 	
-## Systemd second way to do it
+## Systemd Second way to do it by 
+djfdyuruiry https://gist.github.com/djfdyuruiry/6720faa3f9fc59bfdf6284ee1f41f950
 
 	cd /tmp
 
